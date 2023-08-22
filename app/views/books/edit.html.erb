@@ -1,0 +1,10 @@
+<div>
+  <h1>Editing Book</h1>
+  <%= image_tag @book.get_image %>
+  <p>Title：<%= @book.title %></p>
+  <p>Opinion：<%= @book.body %></p>
+  
+  <%= link_to "show", book_path(@book) %>
+  <%= link_to "Back", book_path(@book) %>
+  
+S
