@@ -1,22 +1,22 @@
-<h2>UserInfo</h2>
+  <h2>User info</h2>
     <h3 class="profile-name"><%= user.name %></h3>
       <%= image_tag user.get_profile_image(60, 60), size: "100x100" %>
-
-      <div class="profile-edit">
-      <table class="user-info">
-        <tr>
-          <th>name</th>
-          <td><%= user.name %></td>
-        </tr>
-        <tr>
-          <th>introduction</th>
-          <td><%= user.introduction %></td>
-        </tr>
+      <table class="table">
+        <tbody>
+          <tr>
+            <th>name</th>
+            <td><%= user.name %></td>
+          </tr>
+          <tr>
+            <th>introduction</th>
+            <td><%= user.introduction %></td>
+          </tr>
+        </tbody>
       </table>
-
       <% if user.id == current_user.id %>
           <%= link_to edit_user_path(current_user), class: 'btn btn-default' do %>
           <i class="glyphicon glyphicon-wrench"></i>
           <% end %>
-        <% end %>
-      </div>
+      <% end %>
+      
+     
