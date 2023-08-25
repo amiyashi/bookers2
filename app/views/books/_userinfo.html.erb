@@ -1,6 +1,5 @@
   <h2>User info</h2>
-    <h3 class="profile-name"><%= user.name %></h3>
-      <%= image_tag user.get_profile_image(60, 60), size: "100x100" %>
+      <%= image_tag user.get_profile_image(60, 60) %>
       <table class="table">
         <tbody>
           <tr>
@@ -15,7 +14,8 @@
       </table>
       <div class="row">
       <% if user.id == current_user.id %>
-          <button type="button" class="btn btn-primary"><i class="glyphicon glyphicon-cog"></i> 設定</button>
+          <%= link_to 'edit_user_path(user)', class:"btn btn btn-secondary text-white", method: :get do %>
+            </span><i class="fa-solid fa-wrench"></i>
+          <% end %>
       <% end %>
       </div>
-

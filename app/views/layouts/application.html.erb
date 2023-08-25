@@ -38,41 +38,41 @@
               <%=link_to "Books", books_path, class: 'nav-link text-light' %>
               <i class="fas fa-book"></i>
             </li>
-            
+
             <li class="nav-item">
               <%=link_to "Log out", destroy_user_session_path, method: :delete, class: 'nav-link text-light' %>
               <i class="fas fa-sign-out-alt"></i>
             </li>
-            
+
             <% else %>
-            
+
             <li class="nav-item">
               <%=link_to "Home", root_path, class: 'nav-link text-light' %>
               <i class="fas fa-home"></i>
             </li>
-            
+
             <li class="nav-item">
               <%=link_to "About", about_path, class: 'nav-link text-light' %>
               <i class="fas fa-link"></i>
             </li>
-            
+
             <li class="nav-item">
               <%=link_to "Sign up", new_user_registration_path, class: 'nav-link text-light' %>
               <i class="fas fa-user-plus"></i>
             </li>
-            
+
             <li class="nav-item">
               <%=link_to "Log in", new_user_session_path, class: 'nav-link text-light' %>
               <i class="fas fa-sign-in-alt"></i>
             </li>
-            
+
              <% end %>
             </ul>
           </div>
         </div>
       </nav>
     </header>
-    
+
     <main class="mb-auto">
       <%= flash[:notice] %>
       <%= yield %>
