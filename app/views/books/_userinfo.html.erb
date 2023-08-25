@@ -14,8 +14,8 @@
       </table>
       <div class="row">
       <% if user.id == current_user.id %>
-          <%= link_to 'edit_user_path(user)', class:"btn btn btn-secondary text-white", method: :get do %>
-            </span><i class="fa-solid fa-wrench"></i>
+          <%= link_to edit_user_path(current_user), class:"btn btn btn-secondary text-white", method: :get do %>
+            </span><i class="fas fa-user-cog"></i>
           <% end %>
       <% end %>
       </div>

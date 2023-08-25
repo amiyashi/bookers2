@@ -5,21 +5,18 @@
       <%= render 'newbook', book: @book_new %>
     </div>
     <div class="col-md-8 offset-md-1">
-      <h1>Book detail</h1>
-      <table class="table table-striped">
+      <h2>Book detail</h2>
+      <table class="table">
       <tbody>
         <tr>
         <td>
-          <%= link_to @user.name, user_path(@user) %>
-            <%= image_tag @user.get_profile_image(60, 60) %>
+            <%= image_tag @user.get_profile_image(100, 100) %></br>
+            <%= link_to @user.name, user_path(@user) %>
         </td>
-        <td><%= link_to @book.user.name, user_path(@book.user) %></td>
         <td><%= @book.title %></td>
         <td><%= @book.body %></td>
-        <% if @book.user == current_user %>
-          <td><%= link_to "Edit", edit_book_path(@book), class:"btn btn-success"%></td>
-          <td><%= link_to "Destroy", book_path(@book), method: :delete, data: {confirm: "本当に消しますか？"}, class:"btn btn-danger" %></td>
-        <% end %>
+        <td><%= link_to "Edit", edit_book_path(@book), class:"btn btn-success"%></td>
+        <td><%= link_to "Destroy", book_path(@book), method: :delete, data: {confirm: "本当に消しますか？"}, class:"btn btn-danger" %></td>
         </tr>
         </tbody>
       </table>
