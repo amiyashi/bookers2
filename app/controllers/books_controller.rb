@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-  before_action :is_matching_login_user, only: [:edit, :update]
+  
   def show
     @book_new = Book.new
     @book = Book.find(params[:id])
@@ -28,6 +28,7 @@ class BooksController < ApplicationController
   def edit
     @book = Book.find(params[:id])
     if @book.user == current_user
+      render :edit
     else
       redirect_to books_path
     end
@@ -56,11 +57,5 @@ class BooksController < ApplicationController
     params.require(:book).permit(:title, :body)
   end
 
-  def is_matching_login_user
-    user = User.find(params[:id])
-    unless user.id == current_user.id
-      redirect_to book_path
-    end
-  end
 
 end

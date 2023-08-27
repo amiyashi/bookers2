@@ -13,9 +13,7 @@
         </tbody>
       </table>
       <div class="row">
-      <% if user.id == current_user.id %>
-          <%= link_to edit_user_path(current_user), class:"btn btn btn-secondary text-white", method: :get do %>
-            </span><i class="fas fa-user-cog"></i>
-          <% end %>
-      <% end %>
+        <%= link_to edit_user_path(user), class:"btn btn btn-secondary text-white" do %>
+          </span><i class="fas fa-user-cog"></i>
+        <% end %>
       </div>
